@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Текстовый редактор</title>
+        <title>Text-Redactor</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="/style.css">
     </head>
 
     <body>
-        <h1>Текстовый редактор</h1>
+        <div class="up-menu">
+            <label class="file-open">
+                <input type="file" onchange="importFile(this);">
+                Open
+            </label>
+        </div>
+        <div class="text">
+            <div class="text-field" contenteditable="true" id="text-field"></div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>

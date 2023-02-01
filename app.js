@@ -1,5 +1,7 @@
 const http = require("http");
 const fs = require("fs");
+
+let fileContent = fs.readFileSync("test.txt", "utf8");
   
 http.createServer(function(request, response){
       
@@ -20,3 +22,4 @@ http.createServer(function(request, response){
 }).listen(3000, function(){
     console.log("Server started at 3000");
 });
+
