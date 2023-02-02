@@ -8,9 +8,13 @@
 
     <body spellcheck="false">
         <div class="up-menu">
-            <label class="file-open">
-                <input type="file" onchange="importFile(this);">
+            <label>
+                <input type="file" id="file-open" onchange="openFile(this);">
                 Open
+            </label>
+            <label>
+                <button onclick='saveFile()'>Save</button>
+                <a href='' id='' style='display:none' />
             </label>
         </div>
         <div class="text">

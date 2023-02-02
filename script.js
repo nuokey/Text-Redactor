@@ -1,13 +1,13 @@
-input = document.querySelector("input");
+input = document.getElementById("file-open");
 
 textField = document.getElementById("text-field");
 
 let cursorCoord = 0;
 
 let lastText = "";
-let text;
 
-function importFile(input) {
+
+function openFile(input) {
   let file = input.files[0];
 
   let htmlText = "";
@@ -17,15 +17,28 @@ function importFile(input) {
   reader.readAsText(file);
 
   reader.onload = function() {
-    text = reader.result;
+    let text = reader.result;
+    let text2 = "";
 
-    htmlText.replace(" ", "&nbsp");
-
-    text = text.split("\r\n");
-
-    console.log(text);
     
-    text.forEach(element => {
+    // text = text.replace("Hello", "dfsdfsdf");
+    // text = text.replace(" ", "&nbsp");
+    // text = text.replace("    ", "&nbsp&nbsp&nbsp&nbsp");
+
+    for (let i = 0; i < text.length; i++) {
+      if (text[i] == " ") {
+        text2 += "&nbsp";
+      }
+      else {
+        text2 += text[i];
+      }
+    }
+
+    text2 = text2.split("\r\n");
+
+    console.log(text2);
+    
+    text2.forEach(element => {
         htmlText += `<div>${element}</div>`;
     });
 
@@ -35,6 +48,10 @@ function importFile(input) {
 
     
 
-    console.log(textField.textContent);
+    console.log(textField.innerHTML);
   };
+}
+
+function saveFile() {
+  
 }

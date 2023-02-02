@@ -23,13 +23,15 @@ body {
     background-color: #1C1C1C;
 
     color: white;
+
+    outline:none;
 }
 
-.file-open input {
+.up-menu input {
     display: none;
 }
 
-.file-open {
+.up-menu div {
     color: #21E8E3;
 
     cursor: pointer;
