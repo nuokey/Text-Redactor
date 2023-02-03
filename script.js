@@ -45,13 +45,30 @@ function openFile(input) {
     // htmlText.replace(" ", "&nbsp");
 
     textField.innerHTML = htmlText;
-
-    
-
-    console.log(textField.innerHTML);
   };
 }
 
 function saveFile() {
-  
+    var data = textField.innerHTML;
+    let data2 = "";
+    // console.log(data);
+
+    while (data.replace("<div>", "") != data) {
+        data = data.replace("<div>", "");
+    }
+    while (data.replace("</div>", "\n") != data) {
+        data = data.replace("</div>", "\n");
+    }
+    while (data.replace("&nbsp;", " ") != data) {
+        data = data.replace("&nbsp;", " ");
+    }
+    console.log(data);
+
+    var a = document.getElementById("linkForSavingFiles");
+    var file = new Blob([data], {
+      type: 'plain/text'
+    });
+    a.href = URL.createObjectURL(file);
+    a.download = 'file.txt';
+    a.click();
 }
