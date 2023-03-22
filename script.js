@@ -62,6 +62,14 @@ function saveFile() {
     a.click();
 }
 
+function markDown(text) {
+  if (text.replace("<div>#", "<h>#") != text) {
+    text = text.replace("<div>#", "<h>#");
+  console.log("Markdown");
+  }
+  return text
+}
+
 function htmlToText(data) {
   while (data.replace("<div>", "") != data) {
     data = data.replace("<div>", "");
